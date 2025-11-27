@@ -1,0 +1,111 @@
+.dashboard-container {
+  padding: 100px 20px 40px; /* Padding superior alto para el Navbar flotante */
+  background-color: #f5f7f6; /* Fondo gris muy suave */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0 0 10px 0;
+    font-weight: 300;
+  }
+
+  p {
+    color: #666;
+    font-size: 1.1rem;
+  }
+}
+
+.cards-grid {
+  display: grid;
+  /* Grid responsivo: se adapta automáticamente */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-card {
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  cursor: default;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  mat-card-header {
+    margin-bottom: 10px;
+  }
+
+  mat-card-content {
+    min-height: 60px;
+    
+    /* --- NUEVO: Ocupa el espacio disponible para empujar el botón abajo --- */
+    flex-grow: 1; 
+    /* ---------------------------------------------------------------------- */
+    
+    p {
+      color: #555;
+      line-height: 1.5;
+    }
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* El tamaño por defecto del avatar de material es 40px */
+  }
+
+  /* --- Colores Específicos por Tarjeta --- */
+  
+  /* Foros (Naranja) */
+  &.card-forum .icon-container {
+    background-color: #FFCCBC;
+    color: #E64A19;
+  }
+  &.card-forum button { color: #E64A19; }
+
+  /* Recursos (Azul) */
+  &.card-resources .icon-container {
+    background-color: #BBDEFB;
+    color: #1976D2;
+  }
+  &.card-resources button { color: #1976D2; }
+
+  /* Categorías (Morado) */
+  &.card-categories .icon-container {
+    background-color: #E1BEE7;
+    color: #7B1FA2;
+  }
+  &.card-categories button { color: #7B1FA2; }
+
+  /* Consultas (Verde) */
+  &.card-help .icon-container {
+    background-color: #C8E6C9;
+    color: #388E3C;
+  }
+  &.card-help button { color: #388E3C; }
+
+  /* ADMIN (Rojo para destacar importancia) */
+  &.card-admin {
+    border: 1px solid #ffcdd2;
+    background-color: #fffafa; /* Fondo ligeramente rojizo */
+    
+    .icon-container {
+      background-color: #FFCDD2;
+      color: #D32F2F;
+    }
+    button { color: #D32F2F; font-weight: bold; }
+  }
+}
