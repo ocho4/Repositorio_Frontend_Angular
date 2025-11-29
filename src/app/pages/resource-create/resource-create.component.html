@@ -1,0 +1,38 @@
+<div class="create container">
+
+  <div class="header-row">
+    <button mat-icon-button routerLink="/resources"><mat-icon>arrow_back</mat-icon></button>
+    <h2>Subir Recurso Educativo</h2>
+  </div>
+
+  <form class="resource-form">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Título del recurso</mat-label>
+      <input matInput placeholder="Ej. Guía TDAH">
+    </mat-form-field>
+
+    <div class="split-row">
+      <div class="upload-box">
+        <mat-icon class="big-icon">note_add</mat-icon>
+        <p>Añade una foto para el recurso</p>
+        <input type="file" hidden #fileInput>
+        <button type="button" (click)="fileInput.click()">Seleccionar</button>
+      </div>
+
+      <mat-form-field appearance="fill" class="desc-box">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput rows="8"></textarea>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Enlace del recurso</mat-label>
+      <input matInput placeholder="https://...">
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary">Publicar</button>
+    </div>
+  </form>
+
+</div>

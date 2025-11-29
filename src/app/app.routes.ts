@@ -7,6 +7,8 @@ import { authGuard } from './guards/auth.guard';
 import { PerfilComponent } from './pages/perfil/perfil.component'; // <--- Importar
 import { UsuariosComponent } from './pages/usuarios/usuarios.component'; // <--- Importar
 import { RolesComponent } from './pages/roles/roles.component';
+import {ResourceListComponent} from './pages/resource-list/resource-list.component';
+import {ResourceCreateComponent} from './pages/resource-create/resource-create.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Landing
@@ -20,7 +22,9 @@ export const routes: Routes = [
       { path: 'perfil', component: PerfilComponent }, // <--- Nueva Ruta: /app/perfil
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'roles', component: RolesComponent },
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'resources', component: ResourceListComponent },
+      {path: 'create-resource', component: ResourceCreateComponent },
     ]
   },
   { path: '**', redirectTo: '' }

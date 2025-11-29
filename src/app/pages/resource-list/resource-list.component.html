@@ -1,0 +1,17 @@
+<div class="container-fluid p-4">
+  <h1 class="text-white mb-4">Recursos Educativos</h1>
+
+  <div class="resource-grid">
+    <div *ngIf="isProfessional"
+         class="add-resource-card cursor-pointer"
+         routerLink="/create-resource">
+      <div class="circle-icon">
+        <span class="plus-sign">+</span>
+      </div>
+      <h3>Añadir Recurso Educativo</h3>
+    </div>
+
+    <app-resource-card *ngFor="let item of resources" [resource]="item"></app-resource-card>
+
+  </div>
+</div>

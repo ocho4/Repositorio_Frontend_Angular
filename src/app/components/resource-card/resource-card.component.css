@@ -1,0 +1,11 @@
+.resource-card {
+  background-color: #A8DACC; /* Color similar a tu diseño */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+img {
+  height: 150px;
+  object-fit: cover;
+}

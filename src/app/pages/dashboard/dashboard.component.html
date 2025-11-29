@@ -1,14 +1,14 @@
 <app-navbar></app-navbar>
 
 <div class="dashboard-container" *ngIf="authService.currentUser$ | async as user">
-  
+
   <header class="dashboard-header">
     <h1>Hola, {{ user.username }} 👋</h1>
     <p>Bienvenido a IncluTeach. Selecciona una opción para empezar.</p>
   </header>
 
   <div class="cards-grid">
-    
+
     <mat-card class="dashboard-card card-forum">
       <mat-card-header>
         <div mat-card-avatar class="icon-container">
@@ -37,7 +37,7 @@
         <p>Descarga guías y materiales adaptados para el aprendizaje.</p>
       </mat-card-content>
       <mat-card-actions align="end">
-        <button mat-button >EXPLORAR</button>
+        <button mat-button [routerLink]="['/resources']">EXPLORAR</button>
       </mat-card-actions>
     </mat-card>
 

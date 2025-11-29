@@ -9,7 +9,7 @@ import { BehaviorSubject, tap } from 'rxjs';
 export class AuthService {
   private http = inject(HttpClient);
   private router = inject(Router);
-  private apiUrl = 'http://localhost:8080/auth'; 
+  private apiUrl = 'http://localhost:8080/auth';
 
   // Estado reactivo inicializado con datos guardados
   private currentUserSubject = new BehaviorSubject<any>(this.getUserData());
@@ -64,7 +64,7 @@ export class AuthService {
     // 1. Actualizamos LocalStorage
     localStorage.setItem('token', newToken);
     localStorage.setItem('username', newUsername);
-    
+
     // Si viene un rol nuevo, lo actualizamos. Si no, mantenemos el actual.
     if (newRolId !== undefined && newRolId !== null) {
       localStorage.setItem('rolId', newRolId.toString());
@@ -85,4 +85,9 @@ export class AuthService {
 
   getToken(): string | null { return localStorage.getItem('token'); }
   isAuthenticated(): boolean { return !!this.getToken(); }
+
+  getUserRole(): number | null {
+    const role = localStorage.getItem('rolId');
+    return role ? Number(role) : null;
+  }
 }
